@@ -132,7 +132,7 @@ static const NSString * CSToastQueueKey             = @"CSToastQueueKey";
                           delay:0.0
                         options:(UIViewAnimationOptionCurveEaseOut | UIViewAnimationOptionAllowUserInteraction)
                      animations:^{
-                         toast.alpha = 1.0;
+                         toast.alpha = 0.8;
                      } completion:^(BOOL finished) {
                          NSTimer *timer = [NSTimer timerWithTimeInterval:duration target:self selector:@selector(cs_toastTimerDidFinish:) userInfo:toast repeats:NO];
                          [[NSRunLoop mainRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
@@ -227,7 +227,7 @@ static const NSString * CSToastQueueKey             = @"CSToastQueueKey";
         titleLabel.lineBreakMode = NSLineBreakByTruncatingTail;
         titleLabel.textColor = style.titleColor;
         titleLabel.backgroundColor = [UIColor clearColor];
-        titleLabel.alpha = 1.0;
+        titleLabel.alpha = 0.8;
         titleLabel.text = title;
         
         // size the title label according to the length of the text
@@ -246,7 +246,7 @@ static const NSString * CSToastQueueKey             = @"CSToastQueueKey";
         messageLabel.lineBreakMode = NSLineBreakByTruncatingTail;
         messageLabel.textColor = style.messageColor;
         messageLabel.backgroundColor = [UIColor clearColor];
-        messageLabel.alpha = 1.0;
+        messageLabel.alpha = 0.8;
         messageLabel.text = message;
         
         CGSize maxSizeMessage = CGSizeMake((self.bounds.size.width * style.maxWidthPercentage) - imageRect.size.width, self.bounds.size.height * style.maxHeightPercentage);
@@ -362,7 +362,7 @@ static const NSString * CSToastQueueKey             = @"CSToastQueueKey";
                           delay:0.0
                         options:UIViewAnimationOptionCurveEaseOut
                      animations:^{
-                         activityView.alpha = 1.0;
+                         activityView.alpha = 0.8;
                      } completion:nil];
 }
 
@@ -409,7 +409,7 @@ static const NSString * CSToastQueueKey             = @"CSToastQueueKey";
 - (instancetype)initWithDefaultStyle {
     self = [super init];
     if (self) {
-        self.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.8];
+        self.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.6];
         self.titleColor = [UIColor whiteColor];
         self.messageColor = [UIColor whiteColor];
         self.maxWidthPercentage = 0.8;
@@ -424,12 +424,12 @@ static const NSString * CSToastQueueKey             = @"CSToastQueueKey";
         self.titleNumberOfLines = 0;
         self.messageNumberOfLines = 0;
         self.displayShadow = NO;
-        self.shadowOpacity = 0.8;
-        self.shadowRadius = 6.0;
+        self.shadowOpacity = 0.4;
+        self.shadowRadius = 4.0;
         self.shadowOffset = CGSizeMake(4.0, 4.0);
         self.imageSize = CGSizeMake(80.0, 80.0);
         self.activitySize = CGSizeMake(100.0, 100.0);
-        self.fadeDuration = 0.2;
+        self.fadeDuration = 0.1;
     }
     return self;
 }
